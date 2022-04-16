@@ -24,6 +24,11 @@
     align-items: flex-start;
 }
 
+.banner-container .container h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
 .banner-container .container p {
     font-size: 18px;
     margin-bottom: 20px;

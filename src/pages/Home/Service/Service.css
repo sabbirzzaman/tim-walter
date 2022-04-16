@@ -1,0 +1,48 @@
+.service-item {
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: .3s ease-in-out;
+}
+
+.service-item:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.service-details {
+    padding: 10px;
+}
+
+.service-details h3 {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.service-details h4 {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+
+.service-details p {
+    margin-bottom: 20px;
+}
+
+.service-details a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cba557;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+}
+
+.service-details a:hover {
+    color: #182434;
+}

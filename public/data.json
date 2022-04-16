@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/GJSbGTL/service1.png",
+        "title": "Intellectual Property Law",
+        "price": "$1,732",
+        "details": "Separated they live in. Separated they live in Bookmarks grove right at the coast of the Semantics, a large language ocean."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/bKTCWH2/service2.png",
+        "title": "Labor and Employment",
+        "price": "$2,508",
+        "details": "Separated they live in. Separated they live in Bookmarks grove right at the coast of the Semantics, a large language ocean."
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/k4Nz9FL/service3.png",
+        "title": "Corporate & Civil Litigation",
+        "price": "$1,273",
+        "details": "Separated they live in. Separated they live in Bookmarks grove right at the coast of the Semantics, a large language ocean."
+    }
+]

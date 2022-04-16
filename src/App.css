@@ -13,12 +13,17 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Amiri', serif;
+    color: #182434;
 }
 
 h1 {
     font-size: 58px;
     line-height: 64px;
-    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 64px;
 }
 
 button {
