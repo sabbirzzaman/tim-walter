@@ -1,8 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 
 const SignUp = () => {
+    const nameRef = useRef('');
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const confirmPassRef = useRef('');
+    const navigate = useNavigate();
+
+    const [createUserWithEmailAndPassword, user, loading, error] =
+        useCreateUserWithEmailAndPassword(auth);
+
+    const handleSignUp = (e) => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        createUserWithEmailAndPassword(email, password);
+    };
+
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user]);
+
     return (
         <>
             <TitleBanner title="Sign Up"></TitleBanner>
@@ -11,10 +36,11 @@ const SignUp = () => {
                 <div className="form-heading">
                     <h2>Create your account</h2>
                 </div>
-                <form>
+                <form onSubmit={handleSignUp}>
                     <div className="field-group">
                         <label htmlFor="name">Name</label>
                         <input
+                            ref={nameRef}
                             type="name"
                             name="name"
                             placeholder="Enter your name"
@@ -26,6 +52,7 @@ const SignUp = () => {
                     <div className="field-group">
                         <label htmlFor="email">Email</label>
                         <input
+                            ref={emailRef}
                             type="email"
                             name="email"
                             placeholder="Enter your email"
@@ -37,6 +64,7 @@ const SignUp = () => {
                     <div className="field-group">
                         <label htmlFor="password">Password</label>
                         <input
+                            ref={passwordRef}
                             type="password"
                             name="password"
                             placeholder="Enter your password"
@@ -46,8 +74,11 @@ const SignUp = () => {
                     </div>
 
                     <div className="field-group">
-                        <label htmlFor="confirm-password">Confirm Password</label>
+                        <label htmlFor="confirm-password">
+                            Confirm Password
+                        </label>
                         <input
+                            ref={confirmPassRef}
                             type="password"
                             name="confirm-password"
                             placeholder="Confirm your password"
@@ -62,7 +93,8 @@ const SignUp = () => {
 
                     <div className="field-group">
                         <p>
-                            Already have an account? <Link to="/login">Login</Link>
+                            Already have an account?{' '}
+                            <Link to="/login">Login</Link>
                         </p>
                     </div>
                 </form>
