@@ -1,0 +1,33 @@
+.footer-container {
+    background-color: #1f2022;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-container .container {
+    color: #fff;
+    max-width: 600px;
+}
+
+.footer-logo , .footer-details, .footer-link {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-link a {
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.footer-link a:hover {
+    color: #cba557;
+}
+
+.footer-copyright {
+    padding-top: 20px;
+}

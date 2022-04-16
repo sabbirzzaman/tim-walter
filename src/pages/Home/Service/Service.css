@@ -18,15 +18,7 @@
     padding: 10px;
 }
 
-.service-details h3 {
-    font-size: 26px;
-    line-height: 30px;
-    margin-bottom: 5px;
-}
-
-.service-details h4 {
-    font-size: 22px;
-    line-height: 28px;
+.service-details h3, .service-details h4 {
     margin-bottom: 5px;
 }
 

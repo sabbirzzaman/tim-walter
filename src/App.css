@@ -26,6 +26,16 @@ h2 {
     line-height: 64px;
 }
 
+h3 {
+    font-size: 26px;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 28px;
+}
+
 button {
     background-color: #cba557;
     color: #ffffff;
