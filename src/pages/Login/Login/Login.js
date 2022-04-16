@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Common/Loading/Loading';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import './Login.css';
 
@@ -26,6 +27,10 @@ const Login = () => {
             navigate('/');
         }
     }, [user]);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
+import Loading from '../../Common/Loading/Loading';
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -27,6 +28,10 @@ const SignUp = () => {
             navigate('/');
         }
     }, [user]);
+    
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <>
