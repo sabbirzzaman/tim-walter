@@ -18,7 +18,7 @@ const Header = () => {
                     <Link to='/services'>My Services</Link>
                 </div>
                 <div className="header-btn">
-                    <button>Login</button>
+                    <button onClick={() => navigate('login')}>Login</button>
                 </div>
             </nav>
         </div>

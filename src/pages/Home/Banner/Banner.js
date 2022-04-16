@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Banner.css';
 
 const Banner = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="banner-container">
             <div className="overlay">
@@ -14,7 +17,9 @@ const Banner = () => {
                         I use innovative approaches to solve the <br />
                         toughest challenges for businesses.
                     </p>
-                    <button>My Services</button>
+                    <button onClick={() => navigate('/services')}>
+                        My Services
+                    </button>
                 </div>
             </div>
         </div>
