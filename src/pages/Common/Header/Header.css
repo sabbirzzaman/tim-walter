@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.site-logo img {
+    cursor: pointer;
+}
+
 .navigation {
     display: flex;
     gap: 30px;
