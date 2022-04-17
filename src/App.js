@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import About from './pages/About/About/About';
-import Footer from './pages/Common/Footer/Footer';
-import Header from './pages/Common/Header/Header';
 import Home from './pages/Home/Home/Home';
+import AboutMe from './pages/AboutMe/AboutMe/AboutMe';
 import MyServices from './pages/MyServices/MyServices/MyServices';
-import './App.css';
+import Checkout from './pages/Checkout/Checkout/Checkout';
+import Header from './pages/Common/Header/Header';
+import Footer from './pages/Common/Footer/Footer';
 import Login from './pages/Login/Login/Login';
 import SignUp from './pages/Login/SignUp/SignUp';
-import Checkout from './pages/Checkout/Checkout/Checkout';
 import RequiredAuth from './pages/Login/RequiredAuth/RequiredAuth';
 import NotFounded from './pages/NotFounded/NotFounded';
+import './App.css';
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route path="home" element={<Home></Home>}></Route>
-                <Route path="about" element={<About></About>}></Route>
+                <Route path="about" element={<AboutMe></AboutMe>}></Route>
                 <Route path="services" element={<MyServices></MyServices>}></Route>
                 <Route path="login" element={<Login></Login>}></Route>
                 <Route path="signup" element={<SignUp></SignUp>}></Route>

@@ -1,0 +1,9 @@
+.experience-container {
+    padding-bottom: 80px;
+}
+
+.experience-container .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
