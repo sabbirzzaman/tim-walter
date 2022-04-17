@@ -34,14 +34,17 @@ const Login = () => {
         }
     }, [user]);
 
-    if(error?.message === 'Firebase: Error (auth/user-not-found).') {
-        toast.error("User account not founded.")
+    if (error?.message === 'Firebase: Error (auth/user-not-found).') {
+        toast.error('User account not founded.', {
+            toastId: 'error412',
+        });
     }
 
-    if(error?.message === 'Firebase: Error (auth/wrong-password).') {
-        toast.error("Wrong Password")
+    if (error?.message === 'Firebase: Error (auth/wrong-password).') {
+        toast.error('Wrong Password', {
+            toastId: 'error122',
+        });
     }
-
 
     return (
         <>
@@ -82,13 +85,14 @@ const Login = () => {
 
                     <div className="field-group">
                         <p>
-                            Don't have an account? <Link to="/signup">Create an account.</Link>
+                            Don't have an account?{' '}
+                            <Link to="/signup">Create an account.</Link>
                         </p>
                     </div>
                 </form>
 
                 <SocialLogin></SocialLogin>
-                <ToastContainer/>
+                <ToastContainer />
             </div>
         </>
     );

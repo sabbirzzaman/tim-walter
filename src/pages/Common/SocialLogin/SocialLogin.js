@@ -27,7 +27,9 @@ const SocialLogin = () => {
         facebookError?.message ===
             'Firebase: Error (auth/popup-closed-by-user).'
     ) {
-        toast.warning('Popup closed.');
+        toast.warning('Popup closed.',{
+            toastId: 'warning341',
+        });
     }
 
     return (

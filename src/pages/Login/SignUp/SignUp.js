@@ -44,14 +44,18 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName });
     };
-    
-    if(loading) {
-        toast.success('Verification email sent on your email.');
+
+    if (loading) {
+        toast.success('Verification email sent on your email.', {
+            toastId: 'success223',
+        });
     }
 
     if (error) {
         if (error?.message === 'Firebase: Error (auth/email-already-in-use).') {
-            toast.error('User already exist.');
+            toast.error('User already exist.', {
+                toastId: 'error178',
+            });
         }
     }
 
@@ -63,6 +67,7 @@ const SignUp = () => {
 
     return (
         <>
+            <ToastContainer />
             <TitleBanner title="Sign Up"></TitleBanner>
 
             <div className="form-container">
