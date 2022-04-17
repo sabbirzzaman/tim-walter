@@ -6,8 +6,9 @@ import {
 } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
-import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -21,27 +22,44 @@ const SignUp = () => {
             sendEmailVerification: true,
         });
 
-    const [updateProfile, updating] = useUpdateProfile(auth);
+    const [updateProfile] = useUpdateProfile(auth);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         const displayName = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        const confirmPass = confirmPassRef.current.value;
+
+        if (password.length <= 5) {
+            toast.error('Password have to be 6 or more character.');
+            return;
+        }
+
+        if (password !== confirmPass) {
+            toast.error('Password not matched.');
+            return;
+        }
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName });
     };
+    
+    if(loading) {
+        toast.success('Verification email sent on your email.');
+    }
+
+    if (error) {
+        if (error?.message === 'Firebase: Error (auth/email-already-in-use).') {
+            toast.error('User already exist.');
+        }
+    }
 
     useEffect(() => {
         if (user) {
             navigate('/');
         }
     }, [user]);
-
-    if (loading) {
-        return <Loading></Loading>;
-    }
 
     return (
         <>
@@ -115,6 +133,7 @@ const SignUp = () => {
                 </form>
 
                 <SocialLogin></SocialLogin>
+                <ToastContainer />
             </div>
         </>
     );

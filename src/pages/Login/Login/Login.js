@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 const Login = () => {
@@ -14,7 +15,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [signInWithEmailAndPassword, user, loading] =
+    const [signInWithEmailAndPassword, user, , error] =
         useSignInWithEmailAndPassword(auth);
 
     const handleLogin = (e) => {
@@ -33,9 +34,14 @@ const Login = () => {
         }
     }, [user]);
 
-    if (loading) {
-        return <Loading></Loading>;
+    if(error?.message === 'Firebase: Error (auth/user-not-found).') {
+        toast.error("User account not founded.")
     }
+
+    if(error?.message === 'Firebase: Error (auth/wrong-password).') {
+        toast.error("Wrong Password")
+    }
+
 
     return (
         <>
@@ -82,6 +88,7 @@ const Login = () => {
                 </form>
 
                 <SocialLogin></SocialLogin>
+                <ToastContainer/>
             </div>
         </>
     );
