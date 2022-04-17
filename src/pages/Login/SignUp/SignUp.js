@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+    useCreateUserWithEmailAndPassword,
+    useUpdateProfile,
+} from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import Loading from '../../Common/Loading/Loading';
@@ -13,14 +16,20 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, error] =
-        useCreateUserWithEmailAndPassword(auth);
+        useCreateUserWithEmailAndPassword(auth, {
+            sendEmailVerification: true,
+        });
 
-    const handleSignUp = (e) => {
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
+    const handleSignUp = async (e) => {
         e.preventDefault();
+        const displayName = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName });
     };
 
     useEffect(() => {
@@ -28,9 +37,9 @@ const SignUp = () => {
             navigate('/');
         }
     }, [user]);
-    
+
     if (loading) {
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
 
     return (

@@ -1,7 +1,11 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 import './ShippingForm.css'
 
 const ShippingForm = () => {
+    const [user] = useAuthState(auth);
+
     return (
         <div className="form-container">
             <div className="checkout-title form-heading">
@@ -17,6 +21,7 @@ const ShippingForm = () => {
                         id="name"
                         required
                         readOnly
+                        value={user.displayName}
                     />
                 </div>
 
@@ -28,6 +33,7 @@ const ShippingForm = () => {
                         placeholder="Enter your email"
                         id="email"
                         required
+                        value={user.email}
                         readOnly
                     />
                 </div>
