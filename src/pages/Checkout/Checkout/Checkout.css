@@ -5,8 +5,13 @@
 .checkout-container .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
 }
 
 .checkout-item-details h2 {
     margin-bottom: 30px;
+}
+
+.checkout-form .form-container {
+    margin: 0;
 }

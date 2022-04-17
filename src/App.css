@@ -52,3 +52,9 @@ button, input[type=submit] {
 button:hover, input[type=submit]:hover {
     background-color: #ba9a6c;
 }
+
+input:not([type=submit])::placeholder, textarea::placeholder {
+    color: rgba(93, 85, 85, 0.7);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
+import ShippingForm from './ShippingForm/ShippingForm';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -26,7 +27,7 @@ const Checkout = () => {
                     </div>
                     
                     <div className="checkout-form">
-
+                        <ShippingForm></ShippingForm>
                     </div>
                 </div>
             </div>
