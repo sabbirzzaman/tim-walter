@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
+import Awards from '../Awards/Awards';
 import Banner from '../Banner/Banner';
 import Experiences from '../Experiences/Experiences';
 import Services from '../Services/Services';
@@ -19,6 +20,7 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <Experiences></Experiences>
+            <Awards></Awards>
         </>
     );
 };

@@ -1,0 +1,13 @@
+.awards-container {
+    padding-bottom: 80px;
+}
+
+.awards-container h2 {
+    margin-bottom: 20px;
+}
+
+.awards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
