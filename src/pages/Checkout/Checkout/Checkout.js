@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
-import ShippingForm from './ShippingForm/ShippingForm';
+import ShippingForm from '../ShippingForm/ShippingForm';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -22,7 +22,7 @@ const Checkout = () => {
             <div className="checkout-container">
                 <div className="container">
                     <div className="checkout-item-details">
-                        <h2>Your selected service.</h2>
+                        <h2>Your selected package.</h2>
                         <CheckoutItem service={serviceItem}></CheckoutItem>
                     </div>
                     

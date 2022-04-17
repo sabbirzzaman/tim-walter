@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
+import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import './Login.css';
 
@@ -80,19 +81,7 @@ const Login = () => {
                     </div>
                 </form>
 
-                <div className="divider">
-                    <hr />
-                    <span>Or</span>
-                    <hr />
-                </div>
-
-                <div className="form-google">
-                    <button>Continue with Google</button>
-                </div>
-
-                <div className="form-facebook">
-                    <button>Continue with Facebook</button>
-                </div>
+                <SocialLogin></SocialLogin>
             </div>
         </>
     );

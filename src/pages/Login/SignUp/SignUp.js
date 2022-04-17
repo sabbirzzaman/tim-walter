@@ -7,6 +7,7 @@ import {
 import auth from '../../../firebase.init';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import Loading from '../../Common/Loading/Loading';
+import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -113,19 +114,7 @@ const SignUp = () => {
                     </div>
                 </form>
 
-                <div className="divider">
-                    <hr />
-                    <span>Or</span>
-                    <hr />
-                </div>
-
-                <div className="form-google">
-                    <button>Continue with Google</button>
-                </div>
-
-                <div className="form-facebook">
-                    <button>Continue with Facebook</button>
-                </div>
+                <SocialLogin></SocialLogin>
             </div>
         </>
     );
