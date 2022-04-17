@@ -1,11 +1,16 @@
 import React, { useEffect, useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+    useSendPasswordResetEmail,
+    useSignInWithEmailAndPassword,
+} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
 
 const Login = () => {
@@ -18,12 +23,28 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, , error] =
         useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
     const handleLogin = (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password);
+    };
+
+    const handlePasswordReset = async () => {
+        const email = emailRef.current.value;
+
+        console.log(email);
+
+        if (!email) {
+            toast.error('Please provide your email.');
+            return;
+        }
+
+        await sendPasswordResetEmail(email);
+        toast.success('Sent email for password reset.');
     };
 
     const from = location.state?.form?.pathname || '/';
@@ -82,14 +103,23 @@ const Login = () => {
                     <div className="field-group">
                         <input type="submit" value="Login" />
                     </div>
-
-                    <div className="field-group">
-                        <p>
-                            Don't have an account?{' '}
-                            <Link to="/signup">Create an account.</Link>
-                        </p>
-                    </div>
                 </form>
+
+                <div className="forget-password">
+                    <button onClick={handlePasswordReset}>
+                        <span>Forget Password?</span>
+                        <FontAwesomeIcon
+                            icon={faArrowAltCircleRight}
+                        ></FontAwesomeIcon>
+                    </button>
+                </div>
+
+                <div className="field-group">
+                    <p>
+                        Don't have an account?{' '}
+                        <Link to="/signup">Create an account.</Link>
+                    </p>
+                </div>
 
                 <SocialLogin></SocialLogin>
                 <ToastContainer />

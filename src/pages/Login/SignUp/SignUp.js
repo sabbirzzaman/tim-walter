@@ -128,14 +128,13 @@ const SignUp = () => {
                     <div className="field-group">
                         <input type="submit" value="Sign Up" />
                     </div>
-
-                    <div className="field-group">
-                        <p>
-                            Already have an account?{' '}
-                            <Link to="/login">Login</Link>
-                        </p>
-                    </div>
                 </form>
+
+                <div className="field-group">
+                    <p>
+                        Already have an account? <Link to="/login">Login</Link>
+                    </p>
+                </div>
 
                 <SocialLogin></SocialLogin>
                 <ToastContainer />

@@ -81,3 +81,22 @@
     background-color: #ba9a6c;
     border: 1px solid #ba9a6c;
 }
+
+.forget-password button {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #cba557;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: .3s ease-in-out;
+}
+
+.forget-password button:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #182434;
+}
