@@ -41,6 +41,7 @@ const Header = () => {
                     <CustomLink to="/home">Home</CustomLink>
                     <CustomLink to="/about">About Me</CustomLink>
                     <CustomLink to="/services">My Services</CustomLink>
+                    <CustomLink to="/blogs">Blogs</CustomLink>
                 </div>
                 <div className="header-btn">
                     {user ? (
