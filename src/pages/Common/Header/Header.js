@@ -27,37 +27,31 @@ const Header = () => {
         );
     }
 
-    if (!loading) {
-        return (
-            <div className="header-container">
-                <nav className="container">
-                    <div className="site-logo">
-                        <img
-                            onClick={() => navigate('/')}
-                            src={logo}
-                            alt="Site Logo"
-                        />
-                    </div>
-                    <div className="navigation">
-                        <CustomLink to="/home">Home</CustomLink>
-                        <CustomLink to="/about">About Me</CustomLink>
-                        <CustomLink to="/services">My Services</CustomLink>
-                    </div>
-                    <div className="header-btn">
-                        {user ? (
-                            <button onClick={() => signOut(auth)}>
-                                Sign Out
-                            </button>
-                        ) : (
-                            <button onClick={() => navigate('login')}>
-                                Login
-                            </button>
-                        )}
-                    </div>
-                </nav>
-            </div>
-        );
-    }
+    return (
+        <div className="header-container">
+            <nav className="container">
+                <div className="site-logo">
+                    <img
+                        onClick={() => navigate('/')}
+                        src={logo}
+                        alt="Site Logo"
+                    />
+                </div>
+                <div className="navigation">
+                    <CustomLink to="/home">Home</CustomLink>
+                    <CustomLink to="/about">About Me</CustomLink>
+                    <CustomLink to="/services">My Services</CustomLink>
+                </div>
+                <div className="header-btn">
+                    {user ? (
+                        <button onClick={() => signOut(auth)}>Sign Out</button>
+                    ) : (
+                        <button onClick={() => navigate('login')}>Login</button>
+                    )}
+                </div>
+            </nav>
+        </div>
+    );
 };
 
 export default Header;

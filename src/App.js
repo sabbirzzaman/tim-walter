@@ -9,6 +9,7 @@ import Login from './pages/Login/Login/Login';
 import SignUp from './pages/Login/SignUp/SignUp';
 import Checkout from './pages/Checkout/Checkout/Checkout';
 import RequiredAuth from './pages/Login/RequiredAuth/RequiredAuth';
+import NotFounded from './pages/NotFounded/NotFounded';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                         </RequiredAuth>
                     }
                 ></Route>
+                <Route path='*' element={<NotFounded></NotFounded>}></Route>
             </Routes>
             <Footer></Footer>
         </>
