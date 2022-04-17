@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
 import TitleBanner from '../../Common/TitleBanner/TitleBanner';
@@ -9,6 +9,8 @@ import './Login.css';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
+
+    const location = useLocation();
     const navigate = useNavigate();
 
     const [signInWithEmailAndPassword, user, loading, error] =
@@ -22,14 +24,16 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
+    const from = location.state?.form?.pathname || '/';
+
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from, { replace: true });
         }
     }, [user]);
 
     if (loading) {
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
 
     return (

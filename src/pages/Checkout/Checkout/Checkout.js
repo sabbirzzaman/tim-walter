@@ -14,8 +14,6 @@ const Checkout = () => {
         (service) => parseInt(service.id) === parseInt(serviceId)
     );
 
-    console.log(serviceItem)
-
     return (
         <>
             <TitleBanner title="Checkout"></TitleBanner>
