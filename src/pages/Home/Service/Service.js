@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import './Service.css';
 
 const Service = ({ service }) => {
-    const { image, title, price, details } = service;
+    const { id, image, title, price, details } = service;
+
     return (
         <div className="service-item">
             <img src={image} alt={title} />
@@ -14,7 +15,8 @@ const Service = ({ service }) => {
                 <h4>{title}</h4>
                 <h3>{price}</h3>
                 <p>{details}</p>
-                <Link to="/">
+
+                <Link to={`/checkout/${id}`}>
                     <span>Add to cart</span>
                     <FontAwesomeIcon
                         icon={faArrowAltCircleRight}

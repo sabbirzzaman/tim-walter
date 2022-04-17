@@ -7,7 +7,7 @@ import Services from '../Services/Services';
 import './Home.css'
 
 const Home = () => {
-    const [user, loading] = useAuthState(auth);
+    const [, loading] = useAuthState(auth);
 
     if (loading) {
         return <Loading></Loading>

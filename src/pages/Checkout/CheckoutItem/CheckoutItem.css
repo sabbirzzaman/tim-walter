@@ -1,0 +1,21 @@
+.checkout-item {
+    background-color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transition: .3s ease-in-out;
+}
+
+.checkout-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item-details {
+    padding: 10px;
+}
+
+.item-details h3, .item-details h4 {
+    margin-bottom: 5px;
+}

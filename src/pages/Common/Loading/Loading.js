@@ -5,7 +5,7 @@ import './Loading.css'
 const Loading = () => {
     return (
         <div className='loading-container'>
-            <InfinitySpin color="grey" />
+            <InfinitySpin color="#cba557" />
         </div>
     );
 };
