@@ -20,16 +20,16 @@ const Footer = () => {
 
                 <div className="footer-details">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. In, officiis ipsa ipsam soluta beatae provident
-                        rerum molestias quibusdam velit quaerat.
+                        My experience includes working as Legal Defender's Office,
+                        focusing on felony cases including murder, robbery, and
+                        crimes.
                     </p>
                 </div>
 
                 <div className="footer-link">
-                    {!user ? <Link to="/login">Login</Link> : ''}
                     <Link to="/home">Home</Link>
                     <Link to="/about">About Me</Link>
+                    {!user ? <Link to="/login">Login</Link> : ''}
                 </div>
 
                 <div className="footer-copyright">
