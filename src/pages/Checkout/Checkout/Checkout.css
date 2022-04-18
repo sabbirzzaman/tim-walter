@@ -15,3 +15,26 @@
 .checkout-form .form-container {
     margin: 0;
 }
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .checkout-container .container {
+        gap: 30px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .checkout-container .container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+    }
+
+    .checkout-item-details {
+        margin: 10px;
+    }
+
+    .checkout-form .form-container {
+        margin: 10px;
+    }
+}
