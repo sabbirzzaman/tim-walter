@@ -1,0 +1,7 @@
+.blogs-container {
+    padding: 80px 0;
+}
+
+.blogs-container .container {
+    max-width: 800px;
+}
