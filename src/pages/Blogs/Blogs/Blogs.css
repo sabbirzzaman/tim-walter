@@ -5,3 +5,17 @@
 .blogs-container .container {
     max-width: 800px;
 }
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .blogs-container .container {
+        max-width: 600px;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .blogs-container .container {
+        max-width: 310px;
+    }
+}
