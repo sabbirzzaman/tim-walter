@@ -16,9 +16,117 @@
 
 .navigation a {
     color: #fff;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .navigation a:hover {
     color: #cba557;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.mobile-nav-btn {
+    display: none;
+}
+
+.mobile-nav-btn-show {
+    display: none;
+}
+
+/* Medium devices (landscape tablets, 689px and up) */
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .navigation {
+        position: absolute;
+        top: 80px;
+        left: 10%;
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 80%;
+        padding: 50px;
+        border-radius: 8px;
+        transform: scale(0%);
+        transition: 0.3s ease-in-out;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        transform: scale(100%);
+    }
+
+    .mobile-nav a {
+        color: #000;
+    }
+
+    .nav-toggle svg {
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .mobile-nav-btn-show {
+        display: block;
+    }
+}
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .navigation {
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        top: 80px;
+        transform: scale(0%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding: 50px 20px;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s ease-in-out;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        transform: scale(100%);
+    }
+
+    .mobile-nav a {
+        color: #000;
+    }
+
+    .nav-toggle svg {
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .mobile-nav-btn-show {
+        display: block;
+    }
 }

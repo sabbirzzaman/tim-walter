@@ -7,3 +7,12 @@
     justify-content: space-around;
     align-items: center;
 }
+
+/* Extra small devices (phones, 688px and down) */
+@media only screen and (max-width: 688px) {
+    .experience-container .container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+}

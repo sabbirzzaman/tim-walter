@@ -9,7 +9,7 @@ const Footer = () => {
     const date = new Date();
     const year = date.getFullYear();
 
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     return (
         <div className="footer-container">
