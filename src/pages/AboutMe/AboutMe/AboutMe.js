@@ -10,7 +10,7 @@ const AboutMe = () => {
             <div className="about-container">
                 <div className="container">
                     <div className="about">
-                        <h2>Something About Me</h2>
+                        <h2>Little About Me</h2>
                         <p>
                             <span>Hi, This is Sabbir Zzaman.</span> I'm a
                             Frontend Developer and a passionate learner. I love
