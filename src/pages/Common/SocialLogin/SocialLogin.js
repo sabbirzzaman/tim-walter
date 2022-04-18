@@ -3,21 +3,24 @@ import {
     useSignInWithFacebook,
     useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [signInWithGoogle, googleUser, , googleError] =
         useSignInWithGoogle(auth);
     const [signInWithFacebook, facebookUser, , facebookError] =
         useSignInWithFacebook(auth);
 
+        const from = location.state?.form?.pathname || '/';
+
     useEffect(() => {
         if (googleUser || facebookUser) {
-            navigate('/');
+            navigate(from, { replace: true });
         }
     }, [googleUser, facebookUser]);
 
