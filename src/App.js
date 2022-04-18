@@ -9,6 +9,7 @@ import Footer from './pages/Common/Footer/Footer';
 import Login from './pages/Login/Login/Login';
 import SignUp from './pages/Login/SignUp/SignUp';
 import RequiredAuth from './pages/Login/RequiredAuth/RequiredAuth';
+import OrderSuccess from './pages/OrderSuccess/OrderSuccess/OrderSuccess';
 import NotFounded from './pages/NotFounded/NotFounded';
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
                         </RequiredAuth>
                     }
                 ></Route>
+                <Route path='order-completed' element={<OrderSuccess></OrderSuccess>}></Route>
                 <Route path='*' element={<NotFounded></NotFounded>}></Route>
             </Routes>
             <Footer></Footer>

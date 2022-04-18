@@ -36,8 +36,6 @@ const Login = () => {
     const handlePasswordReset = async () => {
         const email = emailRef.current.value;
 
-        console.log(email);
-
         if (!email) {
             toast.error('Please provide your email.');
             return;

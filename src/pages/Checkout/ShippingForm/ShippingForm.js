@@ -1,17 +1,25 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './ShippingForm.css'
 
 const ShippingForm = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+
+    const handleCheckout = (e) => {
+        e.preventDefault();
+        navigate('/order-completed')
+
+    }
 
     return (
         <div className="form-container">
             <div className="checkout-title form-heading">
                 <h2>Your shipping info</h2>
             </div>
-            <form>
+            <form onSubmit={handleCheckout}>
                 <div className="field-group">
                     <label htmlFor="name">Name</label>
                     <input
