@@ -26,7 +26,7 @@ const Experiences = () => {
             id: 3,
             icon: faBriefcase,
             time: '20+',
-            name: 'Experience',
+            name: 'Experience Year',
         },
         {
             id: 4,
